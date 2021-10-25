@@ -4,10 +4,9 @@ import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
 const galleryEl = document.querySelector('.gallery');
-let markup = '';
 let instance = {};
 
-markup = createMarkup(galleryItems);
+let markup = createMarkup(galleryItems);
 galleryEl.innerHTML = markup;
 
 galleryEl.addEventListener('click', onClickEvent);
@@ -40,9 +39,9 @@ function onClickEvent(event) {
   modalOpen(instance);
 };
 
-function createBasicLightbox(img) {
+function createBasicLightbox(img) {  
     instance = basicLightbox.create(`
-      <img src="${img.dataset.source}" width="800" height="600">
+      <img src="${img.getAttribute('data-source')}" width="800" height="600">
       `);
 };
 
